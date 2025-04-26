@@ -1,0 +1,114 @@
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to bottom, #121212, #1c1c1c); /* dark gradient from top to bottom */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(to right, #388e3c, #66bb6a); /* Green gradient background for the container */
+  color: #f1f1f1;
+}
+
+.sidebar {
+  width: 20%;
+  background: linear-gradient(135deg, #388e3c, #66bb6a); /* green gradient for sidebar */
+  padding: 1rem;
+  overflow-y: auto;
+  border-right: 1px solid #353535;
+}
+
+.topic-item {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s, transform 0.2s;
+  color: #f2f27d; /* bright yellow text */
+  font-weight: bold;
+}
+
+.topic-item.unlocked {
+  background-color: #388e3c; /* fresh green */
+}
+
+.topic-item.locked {
+  background-color: #808080; /* grey for locked topics */
+  cursor: not-allowed;
+  color: #b0b0b0;
+}
+
+.topic-item.unlocked:hover {
+  background-color: #66bb6a; /* light green on hover */
+  transform: translateX(5px); /* smooth sliding effect */
+}
+
+.topic-item.active {
+  background-color: #4caf50; /* vibrant green for active topic */
+  transform: translateX(5px);
+}
+
+/* Updated Content Section Styling */
+.content {
+  width: 80%;
+  padding: 2rem;
+  background: linear-gradient(to bottom, #2a3d33, #3f4c3f); /* Olive green gradient for a smoother, non-black background */
+  overflow-y: auto;
+  min-height: 100vh;
+  transition: background-color 0.5s;
+}
+
+
+.content h1 {
+  color: #ffeb3b; /* bright yellow for headings */
+}
+
+.content p {
+  color: #f1f1f1; /* soft white text for description */
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Button Styling (Shinier and Darker) */
+button {
+  background-color: #2c6e2f; /* Darker green background */
+  color: #f1f1f1; /* Light text color */
+  padding: 12px 20px; /* Padding inside the button */
+  font-size: 9rem; /* Font size */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+  width: auto;
+  align-self: flex-start; /* Align buttons to the start */
+  margin-top: 20px; /* Space between button and content */
+}
+
+/* Button on hover effect (Shinier and darker effect) */
+button:hover {
+  background-color: #388e3c; /* Slightly lighter, still dark green on hover */
+  transform: scale(1.05); /* Slight scale effect for shine */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Darker shadow for shiny effect */
+}
+
+/* Active Button State */
+button:active {
+  background-color: #012303; /* Keep it darker when pressed */
+  transform: scale(1); /* Reset scale when button is pressed */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Reset shadow when clicked */
+}
+
+/* Disabled Button */
+button:disabled {
+  background-color: #616161; /* Darker grey for disabled state */
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none; /* No scale effect */
+}
+
